@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "postgate"
+version = "0.1.0"
+description = "A safety gate for bots that post: rate gaps, duplicate blocking, verify-exactly-once, halt on failure."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+dependencies = []
+keywords = ["bot", "social media", "rate limit", "deduplication", "idempotency", "safety"]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Operating System :: POSIX",
+  "Intended Audience :: Developers",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+postgate = "postgate.cli:main"
+
+[tool.setuptools]
+packages = ["postgate"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
