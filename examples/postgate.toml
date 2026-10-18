@@ -1,0 +1,23 @@
+# postgate config example. Every key is optional; these are the defaults
+# except where noted.
+
+state_path = ".postgate/state.json"
+# queue_path = ".postgate/queue.json"   # default: next to state_path
+
+min_gap_seconds = 90        # minimum time between posts
+dup_window_hours = 24       # `before` blocks near-identical text inside this window
+dupcheck_hours = 6          # default window for `dupcheck`
+lookup_minutes = 120        # default window for `lookup` and the copy count
+similarity = 0.9            # difflib ratio counted as "same text"
+prefix_chars = 80           # equal normalised prefixes also count as "same text"
+max_retries = 1             # retries per text, only after absence is confirmed
+retention_days = 7
+halt_on_failure = true
+author = ""                 # e.g. "examplebot"; checked when the verifier reports authors
+ignore_ids = []             # known duplicates `dupcheck` should skip
+
+# "trust" (no checks, day-one mode), "local" (JSON ledger) or "module:Class"
+verifier = "local"          # (default is "trust")
+
+[verifier_options]
+ledger_path = ".postgate/ledger.json"

@@ -1,0 +1,8 @@
+# One post per line. Comments and blank lines are ignored.
+A standalone post: three checks I run before shipping a script to production.
+
+parent: https://example.com/posts/1001
+A reply to post 1001 that adds one concrete number.
+
+thread: Part one: the bug - a retry loop that posted the same update twice.
+thread: Part two: the fix - verify first, retry at most once, then stop.
